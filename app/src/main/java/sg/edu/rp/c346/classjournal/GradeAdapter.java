@@ -14,7 +14,7 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
 
     private ArrayList<Grade> grade;
     private Context context;
-    private TextView tvGrade;
+    private TextView tvGrade, tvWeek;
     private ImageView ivDG;
 
     public GradeAdapter(Context context, int resource, ArrayList<Grade> objects) {
@@ -23,8 +23,6 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
         grade = objects;
         // Store Context object as we would need to use it later
         this.context = context;
-
-
     }
 
     @Override
@@ -35,15 +33,15 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
 
         View rowView = inflater.inflate(R.layout.row, parent, false);
 
-        // Get the TextView object
+
         tvGrade = (TextView) rowView.findViewById(R.id.textViewGrade);
-        // Get the ImageView object
+        tvWeek = (TextView) rowView.findViewById(R.id.textViewWeek);
         ivDG = (ImageView) rowView.findViewById(R.id.imageViewDG);
 
         Grade currentGrade = grade.get(position);
 
         tvGrade.setText(currentGrade.getGrade());
-
+        tvWeek.setText(currentGrade.getWeek());
         ivDG.setImageResource(R.drawable.dg);
 
         return rowView;
