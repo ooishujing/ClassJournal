@@ -41,7 +41,7 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
         Grade currentGrade = grade.get(position);
 
         tvGrade.setText(currentGrade.getGrade());
-        tvWeek.setText(currentGrade.getWeek());
+        tvWeek.setText(""+currentGrade.getWeek());
         ivDG.setImageResource(R.drawable.dg);
 
         return rowView;
