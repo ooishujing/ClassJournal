@@ -8,18 +8,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddActivity extends AppCompatActivity {
 
+    TextView tvWeek;
+    int weeks = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
+
+        tvWeek = findViewById(R.id.tvWeek);
         //Set tvWeek from get intent
         Intent geti = getIntent();
-        int week = geti.getIntExtra("week", 0);
+        weeks = geti.getIntExtra("week", 0);
+        tvWeek.setText("Weeks "+ weeks);
+
 
         // btnsubmit
         Button btnSubmit = findViewById(R.id.btnSubmit);
@@ -34,7 +41,9 @@ public class AddActivity extends AppCompatActivity {
 
                 String grade = String.valueOf(rb.getText());
 
-                Grade newGrade = new Grade(week,grade)
+                Grade newGrade = new Grade(weeks,grade);
+
+
 
                 Intent i = new Intent();
                 i.putExtra("newGrade", newGrade);
