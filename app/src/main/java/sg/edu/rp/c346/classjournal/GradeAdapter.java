@@ -21,9 +21,9 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
 
     public GradeAdapter(Context context, int resource, ArrayList<Grade> objects) {
         super(context, resource, objects);
-        // Store the food that is passed to this adapter
+
         grade = objects;
-        // Store Context object as we would need to use it later
+
         this.context = context;
     }
 
@@ -36,7 +36,6 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
         View rowView = inflater.inflate(R.layout.row, parent, false);
 
 
-
         tvGrade = (TextView) rowView.findViewById(R.id.textViewGrade);
         tvWeek = (TextView) rowView.findViewById(R.id.textViewWeek);
         ivDG = (ImageView) rowView.findViewById(R.id.imageViewDG);
@@ -44,7 +43,7 @@ public class GradeAdapter extends ArrayAdapter<Grade> {
         Grade currentGrade = grade.get(position);
 
         tvGrade.setText(currentGrade.getGrade());
-        tvWeek.setText(""+currentGrade.getWeek());
+        tvWeek.setText("" + currentGrade.getWeek());
         ivDG.setImageResource(R.drawable.dg);
 
         return rowView;
