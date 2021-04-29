@@ -65,7 +65,7 @@ public class InfoActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             if (data != null) {
                 // Get data passed back from 2nd activity
-                Grade newGrade = data.getSerializableExtra("newGrade");
+               // Grade newGrade = data.getSerializableExtra("newGrade");
 
                //al.add(newWeek,newGrade);
 
